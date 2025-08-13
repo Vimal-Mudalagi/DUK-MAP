@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUK Interactive Floor Map</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">🏫 DUK MAP</div>
+
+            <!-- Floor selector -->
+            <select id="floorSelect">
+                <option value="g-floor.svg">Ground Floor</option>
+                <!-- Add more floors later -->
+                <!-- <option value="1-floor.svg">1st Floor</option> -->
+                <!-- <option value="2-floor.svg">2nd Floor</option> -->
+            </select>
+
+            <!-- Search bar -->
+            <input type="text" id="searchBar" placeholder="Search room or faculty...">
+
+            <!-- Help button -->
+            <button id="helpBtn">❓</button>
+
+            <!-- Hamburger (visible in mobile) -->
+            <button id="hamburger" class="hamburger">☰</button>
+        </nav>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+        <div class="map-container">
+            <!-- Inline SVG will be injected here -->
+            <div id="svgContainer"></div>
+        </div>
+    </main>
+
+    <!-- ===== MODAL ===== -->
+    <div id="roomModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="roomTitle">Room Title</h2>
+            <p id="roomDetails">Details will appear here...</p>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>© 2025 Digital University Kerala Map | About | Contact Us 🐾</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
