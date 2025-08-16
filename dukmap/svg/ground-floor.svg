@@ -147,22 +147,22 @@
 <rect id="room-004" class="room" x="-0.601964" y="0.601964" width="47.4143" height="51.2326" transform="matrix(-1 0 0 1 1240.03 132.639)" fill="white" stroke="black" stroke-width="1.20393"/>
 <rect id="room-005" class="room" x="-0.601964" y="0.601964" width="56.6237" height="51.2326" transform="matrix(-1 0 0 1 1295.99 132.639)" fill="white" stroke="black" stroke-width="1.20393"/>
 <rect id="room-006" class="room" x="-0.601964" y="0.601964" width="43.7961" height="50.7961" transform="matrix(-1 0 0 1 1338.7 133)" fill="white" stroke="black" stroke-width="1.20393"/>
-<rect x="-0.601964" y="0.601964" width="40.7961" height="50.7961" transform="matrix(-1 0 0 1 1378.94 133)" fill="white" stroke="black" stroke-width="1.20393"/>
-<rect x="-0.601964" y="0.601964" width="36.9894" height="51.2326" transform="matrix(-1 0 0 1 1415.11 132.639)" fill="white" stroke="black" stroke-width="1.20393"/>
-<rect x="-0.601964" y="0.601964" width="36.7961" height="50.7961" transform="matrix(-1 0 0 1 1486.11 133)" fill="white" stroke="black" stroke-width="1.20393"/>
-<rect x="-0.601964" y="0.601964" width="43.7961" height="50.7961" transform="matrix(-1 0 0 1 1569.68 133)" fill="white" stroke="black" stroke-width="1.20393"/>
-<rect x="-0.601964" y="0.601964" width="39.7961" height="50.7961" transform="matrix(-1 0 0 1 1608.74 133)" fill="white" stroke="black" stroke-width="1.20393"/>
-<rect x="-0.601964" y="0.601964" width="52.6501" height="51.2326" transform="matrix(-1 0 0 1 1660.72 132.639)" fill="white" stroke="black" stroke-width="1.20393"/>
+<rect id="room-007" class="room" x="-0.601964" y="0.601964" width="40.7961" height="50.7961" transform="matrix(-1 0 0 1 1378.94 133)" fill="white" stroke="black" stroke-width="1.20393"/>
+<rect id="room-008" class="room" x="-0.601964" y="0.601964" width="36.9894" height="51.2326" transform="matrix(-1 0 0 1 1415.11 132.639)" fill="white" stroke="black" stroke-width="1.20393"/>
+<rect id="room-010" class="room" x="-0.601964" y="0.601964" width="36.7961" height="50.7961" transform="matrix(-1 0 0 1 1486.11 133)" fill="white" stroke="black" stroke-width="1.20393"/>
+<rect id="room-012" class="room" x="-0.601964" y="0.601964" width="43.7961" height="50.7961" transform="matrix(-1 0 0 1 1569.68 133)" fill="white" stroke="black" stroke-width="1.20393"/>
+<rect id="room-013" class="room" x="-0.601964" y="0.601964" width="39.7961" height="50.7961" transform="matrix(-1 0 0 1 1608.74 133)" fill="white" stroke="black" stroke-width="1.20393"/>
+<rect id="room-014" class="room" x="-0.601964" y="0.601964" width="52.6501" height="51.2326" transform="matrix(-1 0 0 1 1660.72 132.639)" fill="white" stroke="black" stroke-width="1.20393"/>
 <rect x="-0.601964" y="0.601964" width="70.5547" height="51.2326" transform="matrix(-1 0 0 1 1730.52 132.639)" fill="white" stroke="black" stroke-width="1.20393"/>
-<rect x="-0.601964" y="0.601964" width="161.796" height="56.7961" transform="matrix(-1 0 0 1 1203.09 258)" fill="white" stroke="black" stroke-width="1.20393"/>
-<rect x="-0.601964" y="0.601964" width="82.0548" height="56.6751" transform="matrix(-1 0 0 1 1284.4 258.131)" fill="white" stroke="black" stroke-width="1.20393"/>
+<rect id="room-024" class="room" x="-0.601964" y="0.601964" width="161.796" height="56.7961" transform="matrix(-1 0 0 1 1203.09 258)" fill="white" stroke="black" stroke-width="1.20393"/>
+<rect id="room-023" class="room" x="-0.601964" y="0.601964" width="82.0548" height="56.6751" transform="matrix(-1 0 0 1 1284.4 258.131)" fill="white" stroke="black" stroke-width="1.20393"/>
 <rect x="-0.601964" y="0.601964" width="95.8456" height="56.6751" transform="matrix(-1 0 0 1 1379.25 258.131)" fill="white" stroke="black" stroke-width="1.20393"/>
 <rect opacity="0.3" width="25.5246" height="18.8918" rx="4.70987" transform="matrix(-1 0 0 1 1237.52 283)" fill="#C4C4C4"/>
-<rect x="-0.601964" y="0.601964" width="191.796" height="56.7961" transform="matrix(-1 0 0 1 1569.91 258)" fill="white" stroke="black" stroke-width="1.20393"/>
+<rect id="room-022" class="room" x="-0.601964" y="0.601964" width="191.796" height="56.7961" transform="matrix(-1 0 0 1 1569.91 258)" fill="white" stroke="black" stroke-width="1.20393"/>
 <rect x="-0.601964" y="0.601964" width="89.7961" height="56.7961" transform="matrix(-1 0 0 1 1658.74 258)" fill="white" stroke="black" stroke-width="1.20393"/>
 <rect x="-0.601964" y="0.601964" width="73.0791" height="56.6751" transform="matrix(-1 0 0 1 1730.52 258.131)" fill="white" stroke="black" stroke-width="1.20393"/>
-<rect x="-0.601964" y="0.601964" width="41.8045" height="51.2326" transform="matrix(-1 0 0 1 1526.69 132.639)" fill="white" stroke="black" stroke-width="1.20393"/>
-<rect x="-0.601964" y="0.601964" width="35.213" height="51.2326" transform="matrix(-1 0 0 1 1449.51 132.639)" fill="white" stroke="black" stroke-width="1.20393"/>
+<rect id="room-011" class="room" x="-0.601964" y="0.601964" width="41.8045" height="51.2326" transform="matrix(-1 0 0 1 1526.69 132.639)" fill="white" stroke="black" stroke-width="1.20393"/>
+<rect id="room-003" class="room" x="-0.601964" y="0.601964" width="35.213" height="51.2326" transform="matrix(-1 0 0 1 1449.51 132.639)" fill="white" stroke="black" stroke-width="1.20393"/>
 <rect id="room-003" class="room" x="-0.601964" y="0.601964" width="56.7961" height="50.7961" transform="matrix(-1 0 0 1 1193.01 133)" fill="white" stroke="black" stroke-width="1.20393"/>
 <rect id="room-002" class="room" x="-0.601964" y="0.601964" width="52.2761" height="51.2326" transform="matrix(-1 0 0 1 1137.14 132.639)" fill="white" stroke="black" stroke-width="1.20393"/>
 <rect width="12" height="5" transform="matrix(-1 0 0 1 1075.93 181.373)" fill="white"/>

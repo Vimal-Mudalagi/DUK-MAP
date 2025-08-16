@@ -1,97 +1,97 @@
 const roomData = {
     "room-001": {
-        number: "101",
+        number: "001",
         faculty: "Dr. Asha Kumar",
         email: "asha.kumar@duk.ac.in",
         description: "Computer Science Lab"
     },
     "room-002": {
-        number: "035",
+        number: "002",
         faculty: "Prof. A",
         email: "a@example.com",
         description: "Lab Room"
     },
     "room-003": {
-        number: "035",
+        number: "003",
         faculty: "Prof. A",
         email: "a@example.com",
         description: "Lab Room"
     },
     "room-004": {
-        number: "035",
+        number: "004",
         faculty: "Prof. A",
         email: "a@example.com",
         description: "Lab Room"
     },
     "room-005": {
-        number: "035",
+        number: "005",
         faculty: "Prof. A",
         email: "a@example.com",
         description: "Lab Room"
     },
     "room-006": {
-        number: "035",
+        number: "006",
         faculty: "Prof. A",
         email: "a@example.com",
         description: "Lab Room"
     },
 
     "room-007": {
-        number: "102",
+        number: "007",
         faculty: "Prof. Rajesh Nair",
         email: "rajesh.nair@duk.ac.in",
         description: "Electronics Lab"
     },
     "room-008": {
-        number: "035",
+        number: "008",
         faculty: "Prof. A",
         email: "a@example.com",
         description: "Lab Room"
     },
     "room-009": {
-        number: "035",
+        number: "009",
         faculty: "Prof. A",
         email: "a@example.com",
         description: "Lab Room"
     },
     "room-010": {
-        number: "035",
+        number: "010",
         faculty: "Prof. A",
         email: "a@example.com",
         description: "Lab Room"
     },
     "room-011": {
-        number: "035",
+        number: "011",
         faculty: "Prof. A",
         email: "a@example.com",
         description: "Lab Room"
     },
     "room-012": {
-        number: "035",
+        number: "012",
         faculty: "Prof. A",
         email: "a@example.com",
         description: "Lab Room"
     },
     "room-013": {
-        number: "035",
+        number: "013",
         faculty: "Prof. A",
         email: "a@example.com",
         description: "Lab Room"
     },
     "room-014": {
-        number: "035",
+        number: "014",
         faculty: "Prof. A",
         email: "a@example.com",
         description: "Lab Room"
     },
     "room-015": {
-        number: "035",
+        number: "015",
         faculty: "Prof. A",
         email: "a@example.com",
         description: "Lab Room"
     },
     "room-016": {
-        number: "035",
+        number: "016",
         faculty: "Prof. A",
         email: "a@example.com",
         description: "Lab Room"
