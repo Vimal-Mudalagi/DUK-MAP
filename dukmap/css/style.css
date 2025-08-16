@@ -1,0 +1,105 @@
+/* ===== General Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #004466;
+    color: white;
+    padding: 0.8rem 1.2rem;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+select,
+input[type="text"],
+button {
+    padding: 0.4rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.hamburger {
+    display: none;
+    /* Hidden on desktop */
+}
+
+/* ===== Map Container ===== */
+.map-container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+svg {
+    max-width: 90%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Highlight on hover */
+.room:hover {
+    fill: orange !important;
+    cursor: pointer;
+}
+
+/* ===== Modal ===== */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background: white;
+    padding: 1.5rem;
+    margin: 10% auto;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close-btn {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 0.8rem;
+    background: #004466;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    select,
+    #searchBar,
+    #helpBtn {
+        display: none;
+        /* Hide in mobile navbar by default */
+    }
+}

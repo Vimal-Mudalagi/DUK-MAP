@@ -17,10 +17,7 @@
 
             <!-- Floor selector -->
             <select id="floorSelect">
-                <option value="g-floor.svg">Ground Floor</option>
-                <!-- Add more floors later -->
-                <!-- <option value="1-floor.svg">1st Floor</option> -->
-                <!-- <option value="2-floor.svg">2nd Floor</option> -->
+                <option value="ground-floor.svg">Ground Floor</option>
             </select>
 
             <!-- Search bar -->
@@ -29,7 +26,7 @@
             <!-- Help button -->
             <button id="helpBtn">❓</button>
 
-            <!-- Hamburger (visible in mobile) -->
+            <!-- Hamburger -->
             <button id="hamburger" class="hamburger">☰</button>
         </nav>
     </header>
@@ -37,7 +34,6 @@
     <!-- ===== MAIN CONTENT ===== -->
     <main>
         <div class="map-container">
-            <!-- Inline SVG will be injected here -->
             <div id="svgContainer"></div>
         </div>
     </main>
@@ -45,9 +41,10 @@
     <!-- ===== MODAL ===== -->
     <div id="roomModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 id="roomTitle">Room Title</h2>
-            <p id="roomDetails">Details will appear here...</p>
+            <!-- ✅ FIX: match JS IDs -->
+            <span id="closeModal" class="close-btn">&times;</span>
+            <h2 id="modalTitle">Room Title</h2>
+            <p id="modalDetails">Details will appear here...</p>
         </div>
     </div>
 
@@ -56,7 +53,9 @@
         <p>© 2025 Digital University Kerala Map | About | Contact Us 🐾</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- ✅ FIX: load roomData BEFORE main.js -->
+    <script src="js/roomData.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
