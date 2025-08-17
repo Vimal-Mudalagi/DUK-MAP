@@ -4,7 +4,7 @@ This is a small project I made for 'Just Build' event in **Digital University Ke
 It is a prototype interactive map where you can search rooms and related info and see them highlighted.  
 
 ## Features  
-- **Search Bar** → type a room no., the room gets highlighted, along with info about room no., professor, faculty, email and description. 
+- **Search Bar** → type a room no., the room gets highlighted. If you click on any room, a modal pops up having info about room no., professor, faculty, email and description. 
 - **Highlight Animation** → the searched room blinks so it is easy to notice.  
 - **Hover Effect** → when you hover, rooms glow.  
 - **Badges Page** → small extra page to show how one can earn fun badges (just for fun).
