@@ -6,54 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DUK Interactive Floor Map</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
-
-    <!-- ===== NAVBAR ===== -->
+    <!--NAVBAR -->
     <header>
         <nav class="navbar">
-            <div class="logo">🏫 DUK MAP</div>
-
-            <!-- Floor selector -->
+            <div class="logo">DUK MAP🌴</div>
             <select id="floorSelect">
                 <option value="ground-floor.svg">Ground Floor</option>
             </select>
 
-            <!-- Search bar -->
-            <input type="text" id="searchBar" placeholder="Search room or faculty...">
-
-            <!-- Help button -->
-            <button id="helpBtn">❓</button>
-
-            <!-- Hamburger -->
+            <input type="text" id="searchBar" placeholder="Search room no...">
+            <a href="badges.html">Badges 🎖️</a>
             <button id="hamburger" class="hamburger">☰</button>
         </nav>
     </header>
 
-    <!-- ===== MAIN CONTENT ===== -->
+    <!--  MAIN CONTENT  -->
     <main>
         <div class="map-container">
-            <div id="svgContainer"></div>
+            <!--  wraping in a zoom wrapper -->
+            <div id="svgWrapper" class="svg-wrapper">
+                <div id="svgContainer"></div>
+            </div>
         </div>
     </main>
 
-    <!-- ===== MODAL ===== -->
+    <!-- MODAL -->
     <div id="roomModal" class="modal">
         <div class="modal-content">
-            <!-- ✅ FIX: match JS IDs -->
             <span id="closeModal" class="close-btn">&times;</span>
             <h2 id="modalTitle">Room Title</h2>
             <p id="modalDetails">Details will appear here...</p>
         </div>
     </div>
 
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <p>© 2025 Digital University Kerala Map | About | Contact Us 🐾</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Made with ❤️ by Vimal Mudalagi</p>
+
     </footer>
 
-    <!-- ✅ FIX: load roomData BEFORE main.js -->
     <script src="js/roomData.js"></script>
     <script src="js/main.js"></script>
 </body>

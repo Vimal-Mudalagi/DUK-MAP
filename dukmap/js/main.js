@@ -1,7 +1,6 @@
-// ===== main.js =====
-
 document.addEventListener("DOMContentLoaded", () => {
     const svgContainer = document.getElementById("svgContainer");
+    const svgWrapper = document.getElementById("svgWrapper");
     const modal = document.getElementById("roomModal");
     const modalTitle = document.getElementById("modalTitle");
     const modalDetails = document.getElementById("modalDetails");
@@ -9,32 +8,85 @@ document.addEventListener("DOMContentLoaded", () => {
     const floorSelect = document.getElementById("floorSelect");
     const searchBar = document.getElementById("searchBar");
 
-    // ===== Load SVG into container =====
+    let zoomLevel = 1;
+    let panX = 0, panY = 0;
+    let isPanning = false;
+    let startX, startY;
+
+    // Load SVG 
     function loadSVG(filePath) {
-        fetch(filePath)
+        fetch("svg/" + filePath)
             .then(res => res.text())
             .then(svgData => {
                 svgContainer.innerHTML = svgData;
 
-                // ✅ FIX: querySelectorAll will now find elements even if <g> or <rect>
-                const rooms = svgContainer.querySelectorAll("svg .room");
+                const svg = svgContainer.querySelector("svg");
+                svg.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomLevel})`;
 
+                // Room click logic
+                const rooms = svg.querySelectorAll(".room");
                 rooms.forEach(room => {
                     room.addEventListener("click", () => {
                         openModal(room.id);
                     });
                 });
+
+                //  Enable Zooming 
+                svgWrapper.addEventListener("wheel", (e) => {
+                    e.preventDefault();
+                    if (e.deltaY < 0) zoomLevel *= 1.1;
+                    else zoomLevel /= 1.1;
+                    zoomLevel = Math.min(Math.max(zoomLevel, 0.5), 5); // clamp between 0.5x and 5x
+                    svg.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomLevel})`;
+                });
+
+                //  Enable Panning (dragging) 
+                svgWrapper.addEventListener("mousedown", (e) => {
+                    isPanning = true;
+                    startX = e.clientX - panX;
+                    startY = e.clientY - panY;
+                });
+
+                svgWrapper.addEventListener("mousemove", (e) => {
+                    if (!isPanning) return;
+                    panX = e.clientX - startX;
+                    panY = e.clientY - startY;
+                    svg.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomLevel})`;
+                });
+
+                svgWrapper.addEventListener("mouseup", () => isPanning = false);
+                svgWrapper.addEventListener("mouseleave", () => isPanning = false);
+
+                //  Mobile pinch zoom support 
+                let lastDistance = null;
+                svgWrapper.addEventListener("touchmove", (e) => {
+                    if (e.touches.length === 2) {
+                        const dx = e.touches[0].clientX - e.touches[1].clientX;
+                        const dy = e.touches[0].clientY - e.touches[1].clientY;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (lastDistance) {
+                            if (distance > lastDistance) zoomLevel *= 1.05;
+                            else zoomLevel /= 1.05;
+                            zoomLevel = Math.min(Math.max(zoomLevel, 0.5), 5);
+                            svg.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomLevel})`;
+                        }
+                        lastDistance = distance;
+                    }
+                });
+
+                svgWrapper.addEventListener("touchend", () => lastDistance = null);
             })
             .catch(err => console.error("Error loading SVG:", err));
     }
 
-    // ===== Open Modal with Room Data =====
+    //  Modal logic
     function openModal(roomId) {
-        const data = roomData[roomId]; // from roomData.js
-
+        const data = roomData[roomId];
         if (data) {
             modalTitle.textContent = `Room ${data.number}`;
             modalDetails.innerHTML = `
+            <p><strong>professor:</strong> ${data.professor}</p>
                 <p><strong>Faculty:</strong> ${data.faculty}</p>
                 <p><strong>Email:</strong> ${data.email}</p>
                 <p><strong>Description:</strong> ${data.description}</p>
@@ -43,29 +95,19 @@ document.addEventListener("DOMContentLoaded", () => {
             modalTitle.textContent = `Room: ${roomId}`;
             modalDetails.innerHTML = `<p>No data available for this room.</p>`;
         }
-
         modal.style.display = "block";
     }
 
-    // ===== Modal Close =====
-    closeModal.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
-    window.addEventListener("click", (e) => {
-        if (e.target === modal) modal.style.display = "none";
-    });
+    closeModal.addEventListener("click", () => modal.style.display = "none");
+    window.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
 
-    // ===== Floor Selector =====
     floorSelect.addEventListener("change", function () {
-        const floorFile = "svg/" + this.value;
-        loadSVG(floorFile);
+        loadSVG(this.value);
     });
 
-    // ===== Search Bar =====
     searchBar.addEventListener("input", function () {
         const query = this.value.toLowerCase();
         const rooms = svgContainer.querySelectorAll("svg .room");
-
         rooms.forEach(room => {
             if (room.id.toLowerCase().includes(query)) {
                 room.style.fill = "yellow";
@@ -74,29 +116,22 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-    
-    function openModal(roomId) {
-        if (!modalTitle || !modalDetails) {
-            console.error("Modal elements not found in DOM");
-            return;
-        }
+    //  Search Bar 
+    searchBar.addEventListener("input", function () {
+        const query = this.value.toLowerCase();
+        const rooms = svgContainer.querySelectorAll(".room");
 
-        const data = roomData[roomId];
-        if (data) {
-            modalTitle.textContent = `Room ${data.number}`;
-            modalDetails.innerHTML = `
-                <p><strong>Faculty:</strong> ${data.faculty}</p>
-                <p><strong>Email:</strong> ${data.email}</p>
-                <p><strong>Description:</strong> ${data.description}</p>
-            `;
-        } else {
-            modalTitle.textContent = `Room: ${roomId}`;
-            modalDetails.innerHTML = `<p>No data available for this room.</p>`;
-        }
+        rooms.forEach(room => {
+            if (room.id.toLowerCase().includes(query) && query !== "") {
+                room.classList.add("pulse");
+                // Removing pulse after animation ends
+                setTimeout(() => room.classList.remove("pulse"), 2000);
+            } else {
+                room.classList.remove("pulse");
+            }
+        });
+    });
 
-        modal.style.display = "block";
-    }
-
-    // ===== Initial Load =====
-    loadSVG("svg/ground-floor.svg");
+    // Initial load
+    loadSVG("ground-floor.svg");
 });
